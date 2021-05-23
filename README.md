@@ -1,8 +1,8 @@
 # singletons_analysis
 
-#script to analyse the distribution of singleton after normalizing for sample size
+#script to analyse the distribution of singletons after normalizing for sample size
 
-The distribution of singletons and rare allele can provide information about the demographic history of a given population this is one metric that I used for the study of coho salmon demography in our Plos Genetic paper see:  https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008348
+The distribution of singletons and rare allele can provide information about the demographic history of a given population this is one metric that I used for the study of coho salmon demography in our Plos Genetics paper see:  https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008348
 
 This scripts compute the distribution of singleton at each sampling locality according to the smallest sample size in your populations.
 To get an estimate of the uncertainty around this analyses it performs random sampling of individuals to test for significant difference in singleton distribution among biologically meaningful group (e.g. clusters inferred from a PCA or clustering algorithm).
