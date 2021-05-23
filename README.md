@@ -1,6 +1,6 @@
 # singletons_analysis
 
-#script to analyse distribution of singleton after normalizing for sample size
+#script to analyse the distribution of singleton after normalizing for sample size
 
 The distribution of singletons and rare allele can provide information about the demographic history of a given population this is one metric that I used for the study of coho salmon demography in our Plos Genetic paper see:  https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008348
 
@@ -46,8 +46,11 @@ This list will be used randomly produce vcffile from which singleton will be com
 After reshaping the result the script ```03_plot_distrib.R``` will test for significant differences in the distribution of singleton among the cluster provided in the strata file.  
 For now I only perform a simple wilcoxon test and kruskall wallis test because the data are not independant
 
-ultimately a graph like this will be produced
+ultimately a graph like this will be produced:  
 ![example_graph](https://github.com/QuentinRougemont/singletons_analysis/blob/main/pictures/example_plot.png)  
+
+Interestingly the Alaskan samples displayed a high number of singleton after accounting for sample_size. A pattern that was not obvious at first look.
  
 
-
+## To do:
+Automatize ggplot script for any number of groups
