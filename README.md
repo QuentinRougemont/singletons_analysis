@@ -10,9 +10,9 @@ perform random sampling of individuals to test for significant difference in sin
 
 ## dependencies 
 
-Linux
-vcftools
-R
+Linux  
+vcftools  
+R  
 
 see details in scripts:
 ```./01_analyse_singletons.sh ``` to see the list of arguments and input necessary
