@@ -11,7 +11,6 @@
 #script used in our plos genetics paper on the load of coho salmon
 
 #arguments
-#if [ $# -ne 4 ]; then
 if [ $# -lt 3 ] || [ $# -gt 4 ]; then
     echo "umber of arguments must  3 or 4"
     echo "USAGE: $0 strata vcf sample_size n_rep "
@@ -30,7 +29,7 @@ else
 fi
 
 if [ -z "$n_rep" ] ; then
-    n_rep=20
+    n_rep=500
 fi
 
     echo "strata file is $strata"
