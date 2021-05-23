@@ -12,7 +12,7 @@
 
 #arguments
 if [ $# -lt 3 ] || [ $# -gt 4 ]; then
-    echo "umber of arguments must  3 or 4"
+    echo "number of arguments must  3 or 4"
     echo "USAGE: $0 strata vcf sample_size n_rep "
     echo "Expecting the following values on the command line, in that order:"
     echo "1) strata: tab separated file containing the population id in first colomn, individual names in 2nd colomn and a third colomn with groupings information"
@@ -22,7 +22,7 @@ if [ $# -lt 3 ] || [ $# -gt 4 ]; then
     echo "4) n_rep = number of replicate #optional: default = 500"
     exit 1
 else
-    strata=$1      #stata file name
+    strata=$1      #strata file name
     vcf=$2         #vcf file name
     sample_size=$3 #min number of ind.
     n_rep=$4       #e.g. 500 replicate
@@ -32,10 +32,10 @@ if [ -z "$n_rep" ] ; then
     n_rep=500
 fi
 
-    echo "strata file is $strata"
-    echo "vcf fime is $vcf"
-    echo "sample size is $sample_size"
-    echo "number of replicate is $n_rep"
+echo "strata file is $strata"
+echo "vcf fime is $vcf"
+echo "sample size is $sample_size"
+echo "number of replicate is $n_rep"
 
 
 #ici verifier la compression du vcf sinon le compression avec bgzip
@@ -90,9 +90,14 @@ cd COUNTS
 paste pop.vector single*txt >> ../ALL.txt
 cd ../
 gzip ALL.txt.gz 
+#save space on disk:
+rm -rf BOOT/COUNTS
+
 #then perform plot of the distribution and test for differences in R:
+#this may need to be customized for the plotting part
 
 Rscript ./03_plot_distrib.R  $strata
 
 echo "analysis done "
-echo "runn timing is time"
+time=$(date)
+echo "analysis finished at $time"
