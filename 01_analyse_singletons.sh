@@ -96,7 +96,7 @@ rm -rf BOOT/COUNTS
 #then perform plot of the distribution and test for differences in R:
 #this may need to be customized for the plotting part
 
-Rscript ./03_plot_distrib.R  $strata
+Rscript ./03.plot_distrib.R  $strata
 
 echo "analysis done "
 time=$(date)

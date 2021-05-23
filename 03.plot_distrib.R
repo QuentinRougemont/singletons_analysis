@@ -56,20 +56,22 @@ pairwise.wilcox.test(aggreg$value, aggreg$Group.1,
 
 colnames(aggreg)[1] <- "Region"
 
-#Coho samples spefici
+#Coho samples specific renaming
 #aggreg$Region <- gsub('Washington&Oregon','Cascadia',agg$Region)
 #aggreg$Region <- factor(agg$Region,
 #    levels = c('California', 'Cascadia', 'BC',
 #     'HaidaGwaii','Thompson','Alaska'),
 #    ordered = TRUE)
 
-#The colours needs to be customzied depending on the group size!
 p <- ggplot(aggreg, aes(x = Region, y = value ,fill=Region ))
 p <- p+ geom_violin(trim = F, width=1)  + theme_minimal() #+ theme_classic() #
 p <- p + labs(x="Region", y = "Singleton Counts") 
 
-p <- p +scale_fill_manual(values=c("Red", "Green","Orange", 
-    "darkviolet","springgreen4","Blue"))
+#code specific to salmon
+#The colours scheme could be customzied depending on the group size!
+#p <- p +scale_fill_manual(values=c("Red", "Green","Orange", 
+#    "darkviolet","springgreen4","Blue"))
+
 p <- p + stat_summary(fun.data=mean_sdl, mult=1, 
                  geom="pointrange", color="black")
 
