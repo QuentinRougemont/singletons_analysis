@@ -47,6 +47,7 @@ After reshaping the result the script ```03_plot_distrib.R``` will test for sign
 For now I only perform a simple wilcoxon test and kruskall wallis test because the data are not independant
 
 ultimately a graph like this will be produced
-![example_graph](https://github.com/QuentinRougemont/singletons_analysis/blob/master/pictures/example_plot.png) 
+![example_graph](https://github.com/QuentinRougemont/singletons_analysis/blob/main/pictures/example_plot.png)  
+ 
 
 
