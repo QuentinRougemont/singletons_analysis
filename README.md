@@ -38,3 +38,15 @@ By running ```./01_analyse_singletons.sh``` you will see the list of arguments, 
     observed dataset)
  * 4. n_rep = number of replicates to performed #optional: default = 500. This is used to estimate the variance in the distribution of singleton accross groups.
 
+the script ```./01_analyse_singletons.sh``` will run automatically the two Rscript. 
+ 
+The first script ```02.random_sampling.R ```  will simply produce random list of individuals according to the smallest sample size.
+This list will be used randomly produce vcffile from which singleton will be computed. 
+
+After reshaping the result the script ```03_plot_distrib.R``` will test for significant differences in the distribution of singleton among the cluster provided in the strata file.  
+For now I only perform a simple wilcoxon test and kruskall wallis test because the data are not independant
+
+ultimately a graph like this will be produced
+![example_graph](https://github.com/QuentinRougemont/singletons_analysis/blob/master/pcitures/example_plot.png) 
+
+
