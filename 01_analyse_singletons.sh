@@ -38,7 +38,7 @@ echo "sample size is $sample_size"
 echo "number of replicate is $n_rep"
 
 
-#ici verifier la compression du vcf sinon le compression avec bgzip
+#ici verifier la compression du vcf sinon le compresser avec bgzip
 if file --mime-type "$vcf" | grep -q gzip$; then
   echo "$vcf is gzipped"
 else

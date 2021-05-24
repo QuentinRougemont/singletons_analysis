@@ -18,21 +18,18 @@ if("ggplot2" %in% rownames(installed.packages()) == FALSE)
 
 library(reshape2)
 library(dplyr)
-#library(ggpubr)
 library(data.table)
 library(ggplot2)
 
 ## load data
 #argument
 argv <- commandArgs(T)
-
 strata <- argv[1] #argument provided automatically to the Rscript
 singletons <-fread("zcat ALL.txt.gz")
 strata <- read.table(strata)
 colnames(strata) <- c("ID","IND","GROUP")
 strata <- select(strata, -IND)
- 
-c <- merge(strata, singletons , by.x ="ID", by.y="V1")
+c <- merge(strata, singletons , by.x ="ID", by.y="V1") #keep group for plotting
 
 aggreg <- aggregate(c[,3:ncol(c)],by=list(c[,2]),mean)
 aggreg <- melt(aggreg)
@@ -53,7 +50,6 @@ pairwise.wilcox.test(aggreg$value, aggreg$Group.1,
 #    sd = sd(value, na.rm = TRUE)
 #  )
 
-
 colnames(aggreg)[1] <- "Region"
 
 #Coho samples specific renaming
@@ -71,6 +67,7 @@ p <- p + labs(x="Region", y = "Singleton Counts")
 #The colours scheme could be customzied depending on the group size!
 #p <- p +scale_fill_manual(values=c("Red", "Green","Orange", 
 #    "darkviolet","springgreen4","Blue"))
+p <- p + scale_fill_brewer(palette="Dark2")
 
 p <- p + stat_summary(fun.data=mean_sdl, mult=1, 
                  geom="pointrange", color="black")
