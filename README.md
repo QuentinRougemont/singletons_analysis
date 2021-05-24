@@ -12,7 +12,7 @@ Then it plot de results
 
 /!\ Beware that data will not be independant.  
 
-Here the smallest sample size was 13 and the median sample size was 36.
+In the example below, the smallest sample size was 13 and the median sample size was 36.
 
 
 ## dependencies 
@@ -46,11 +46,12 @@ By running ```./01_analyse_singletons.sh``` you will see the list of arguments, 
  * 3. sample size: minimum sample size (should match the minimum sample size in the 
     observed dataset)
  * 4. n_rep = number of replicates to performed #optional: default = 200. This is used to estimate the variance in the distribution of singleton accross groups.
+In general it is not necessary to perform more than 200 replicate as you will sample more and more of the same individuals.
 
 the script ```./01_analyse_singletons.sh``` will run automatically the two Rscript. 
  
 The first script ```02.random_sampling.R ```  will simply produce random list of individuals according to the smallest sample size.
-This list will be used randomly produce vcffile from which singleton will be computed. 
+This list will be used randomly to produce vcffile from which count of singletons will be computed. 
 
 After reshaping the result the script ```03.plot_distrib.R``` will test for significant differences in the distribution of singleton among the cluster provided in the strata file.  
 For now I only perform a simple wilcoxon test and kruskall wallis test because the data are not independant
