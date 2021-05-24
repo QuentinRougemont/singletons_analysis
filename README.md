@@ -4,9 +4,12 @@
 
 The distribution of singletons and rare allele can provide information about the demographic history of a given population this is one metric that I used for the study of coho salmon demography in our Plos Genetics paper see:  https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008348
 
-This scripts compute the distribution of singleton at each sampling locality according to the smallest sample size in your populations.
+These scripts compute the distribution of singletons at each sampling locality according to the smallest sample size in your populations.
 To get an estimate of the uncertainty around this analyses it performs random sampling of individuals to test for significant difference in singleton distribution among biologically meaningful group (e.g. clusters inferred from a PCA or clustering algorithm).
-Then it plot de results
+Then it plot de results  
+/!\ Beware that you need some variance in the distribution of sample size. Otherwise, the same individual will be repeatedly sampled. Beware that data will not be independant.
+Here the smallest sample size was 13 and the median sample size was 36.
+
 
 ## dependencies 
 
