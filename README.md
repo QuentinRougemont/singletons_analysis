@@ -23,10 +23,12 @@ vcftools available [here](https://github.com/vcftools/vcftools.git)
 this should be installed and in your path 
  
 ```R```  
-this should be installed and in your path
-The specific R libraries will be installed automatically if not already present
+this should be installed and in your path  
 
-bgzip from [htslib](https://www.htslib.org/doc/bgzip.html)
+The specific R libraries will be installed automatically if not already present in your R environment
+
+bgzip from [htslib](https://www.htslib.org/doc/bgzip.html) 
+
 this should be installed and in your path
 
 
@@ -43,7 +45,7 @@ By running ```./01_analyse_singletons.sh``` you will see the list of arguments, 
  * 2. vcf file : name of the vcffile compressed or not
  * 3. sample size: minimum sample size (should match the minimum sample size in the 
     observed dataset)
- * 4. n_rep = number of replicates to performed #optional: default = 500. This is used to estimate the variance in the distribution of singleton accross groups.
+ * 4. n_rep = number of replicates to performed #optional: default = 200. This is used to estimate the variance in the distribution of singleton accross groups.
 
 the script ```./01_analyse_singletons.sh``` will run automatically the two Rscript. 
  

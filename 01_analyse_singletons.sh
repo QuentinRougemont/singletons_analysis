@@ -25,11 +25,11 @@ else
     strata=$1      #strata file name
     vcf=$2         #vcf file name
     sample_size=$3 #min number of ind.
-    n_rep=$4       #e.g. 500 replicate
+    n_rep=$4       #e.g. 200 replicate
 fi
 
 if [ -z "$n_rep" ] ; then
-    n_rep=500
+    n_rep=200
 fi
 
 echo "strata file is $strata"
