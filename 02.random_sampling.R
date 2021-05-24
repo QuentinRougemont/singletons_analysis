@@ -4,7 +4,7 @@
 
 #library
 if("dplyr" %in% rownames(installed.packages()) == FALSE)
-    {install.packages("data.table", repos="https://cloud.r-project.org") }
+    {install.packages("dplyr", repos="https://cloud.r-project.org") }
 
 library(dplyr)
 #check if install, else install
