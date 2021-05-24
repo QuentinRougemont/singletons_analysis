@@ -38,10 +38,23 @@ aggreg <- melt(aggreg)
 #TukeyHSD(fit) #only for independent data that fit the anova assumption
 
 #here data are non-independent:
-kruskal.test(value ~ Group.1, data = aggreg)
+KW <- kruskal.test(value ~ Group.1, data = aggreg)
 
-pairwise.wilcox.test(aggreg$value, aggreg$Group.1,
+sink("kruskal_Wallis.score.txt")
+print(KW)
+print("KW exact p.value:")
+print(KW$p.value)
+sink()
+writeLines("\nKruskall-Wallis test printed in kruskal_Wallis.score.txt file\n")
+
+pw <- pairwise.wilcox.test(aggreg$value, aggreg$Group.1,
                  p.adjust.method = "BH")
+
+sink("p.wilcox.test.txt")
+print(pw)
+sink()
+
+writeLines("\npairwise wilcoxon test printed in p.wilcox.test.txt file \n")
 
 #group_by(aggreg, Group.1) %>%
 #  summarise(
